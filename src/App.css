@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+.display {
+  font-family: "Markazi Text", serif;
+  font-size: 64pt;
+  font-weight: medium;
+}
+
+.sub {
+  font-family: "Markazi Text", serif;
+  font-size: 40pt;
+  font-weight: normal;
+}
+
+.lead {
+  font-family: "KARLA", sans-serif;
+  font-size: 18pt;
+  font-weight: medium;
+}
+
+.sectionTitle {
+  font-family: "KARLA", sans-serif;
+  font-size: 20pt;
+  font-weight: 800; /* extra bold*/
+}
+
+.sectionCat {
+  font-family: "KARLA", sans-serif;
+  font-size: 16pt;
+  font-weight: 800; /* extra bold*/
+}
+
+.card {
+  font-family: "KARLA", sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.p {
+  font-family: "KARLA", sans-serif;
+  font-size: 16pt;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.highlight {
+  font-family: "KARLA", sans-serif;
+  font-size: 16pt;
+  font-weight: medium;
+}
