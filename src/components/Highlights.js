@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Box, HStack, SimpleGrid, VStack, Button, Heading, Image, Text, Card, CardBody, CardFooter} from "@chakra-ui/react";
 
-import {Display, Sub, cardTitle, P, Highlight} from './../styles/components';
+import {Sub, cardTitle, P, Highlight} from './../styles/components';
 
 import { MdDeliveryDining } from "react-icons/md";
 
@@ -35,6 +35,7 @@ const Highlights = () => {
         <Box
         paddingTop='80px'
         justifyContent='center'
+        paddingBottom='80px'
         >
             <VStack>
                 <HStack spacing={400} paddingBottom={5}>

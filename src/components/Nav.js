@@ -59,6 +59,7 @@ const Nav = () => {
           transitionDuration=".4s"
           transitionTimingFunction="ease-in-out"
           backgroundColor="#edefee"
+          boxShadow='md'
 
           style={{zIndex:2}}
         >
@@ -72,25 +73,15 @@ const Nav = () => {
               <nav>
                 <HStack spacing={8}>
                     <ReactLogo/>
-
-                  {/* {socials.map(({icon, url}) => (
-                    <a
-                      key = {url}
-                      href = {url}
-                      target = "_blank"
-                      rel = "noopener noreferrer"
-                    >
-                      <FontAwesomeIcon icon={icon} size="2x" key = {url}/>
-                    </a>
-                  ))} */}
                 </HStack>
               </nav>
               <nav>
                 <HStack spacing={8}>
                     {tags.map(({name}) => (
                         <a
-                        target = "_blank"
-                        rel = "noopener noreferrer"
+                            href="#"
+                            target = "_blank"
+                            rel = "noopener noreferrer"
                         >
                         {name}
                         </a>
@@ -110,24 +101,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-        // <ul>
-        //     <li>
-        //         <a href="Home">Home</a>
-        //     </li>
-        //     <li>
-        //         <a href="About">About</a>
-        //     </li>
-        //     <li>
-        //         <a href="Menu">Menu</a>
-        //     </li>
-        //     <li>
-        //         <a href="Reservations">Reservations</a>
-        //     </li>
-        //     <li>
-        //         <a href="OnlineOrder">Online Order</a>
-        //     </li>
-        //     <li>
-        //         <a href="LogIn">Log In</a>
-        //     </li>
-        // </ul>

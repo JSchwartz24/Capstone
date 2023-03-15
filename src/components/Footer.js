@@ -1,7 +1,7 @@
 import React from "react";
-import {Box, Flex, HStack, VStack, Text, Heading} from "@chakra-ui/react";
+import {Box, HStack, VStack, Text, Heading} from "@chakra-ui/react";
 
-import {Highlight, P} from './../styles/components';
+import {P} from './../styles/components';
 
 import {ReactComponent as ReactLogo} from '.././img/Logo.svg';
 
