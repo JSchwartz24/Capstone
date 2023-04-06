@@ -47,3 +47,10 @@ export const Highlight = {
     fontSize: '16pt',
     fontWeight: 'medium',
 }
+
+export const Foot = {
+    fontFamily: "KARLA , sans-serif",
+    fontSize: '12pt',
+    fontWeight: 'normal',
+    lineHeight: '1.5',
+}

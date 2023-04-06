@@ -3,14 +3,16 @@ import * as React from 'react'
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import './App.css';
-import Header from'./components/Header';
+
+import Header from './components/Header';
 import Main from './components/Main';
-import Footer from'./components/Footer';
+import Booking from './components/Booking';
+import Footer from './components/Footer'
+import ConfirmedBoooking from './components/ConfirmedBooking';
+
+import { Route, Routes } from 'react-router-dom';
 
 //extend the theme
-
-
-
 const theme = extendTheme({
     colors: {
     green: '#495E57',
@@ -29,11 +31,15 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <main>
-        <Header/>
-        <Main/>
-        <Footer/>
-      </main>
+      <Header/>
+      <div className='container'>
+        <Routes>
+          <Route path='/' element={<Main/>}/>
+          <Route path='/booking' element={<Booking/>}/>
+          <Route path='/confirmed' element={<ConfirmedBoooking/>}/>
+        </Routes>
+      </div>
+      <Footer/>
     </ChakraProvider>
   );
 }

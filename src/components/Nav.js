@@ -1,26 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, HStack } from "@chakra-ui/react";
 
+import { Link } from "react-router-dom";
+
 import {ReactComponent as ReactLogo} from '.././img/Logo.svg';
 
 const tags = [
     {
-        name: "Home"
+        name: "Home",
+        to: "/",
     },
     {
-        name: "About"
+        name: "About",
+        to: "/",
     },
     {
-        name: "Menu"
+        name: "Menu",
+        to: "/",
     },
     {
-        name: "Reservation"
+        name: "Reservation",
+        to: "/booking",
     },
     {
-        name: "Online Order"
+        name: "Online Order",
+        to: "/",
     },
     {
-        name: "Log in"
+        name: "Log in",
+        to: "/",
     },
 
 ]
@@ -77,14 +85,10 @@ const Nav = () => {
               </nav>
               <nav>
                 <HStack spacing={8}>
-                    {tags.map(({name}) => (
-                        <a
-                            href="#"
-                            target = "_blank"
-                            rel = "noopener noreferrer"
-                        >
+                    {tags.map(({name, to}) => (
+                        <Link to={to} key={name}>
                         {name}
-                        </a>
+                        </Link>
                     ))}
                   {/* <a href="#projects" onClick={handleClick("projects")} style={{cursor:'pointer'}}>
                     Projects

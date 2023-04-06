@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, HStack, VStack, Text, Heading} from "@chakra-ui/react";
 
-import {P} from './../styles/components';
+import {Foot} from './../styles/components';
 
 import {ReactComponent as ReactLogo} from '.././img/Logo.svg';
 
@@ -16,7 +16,7 @@ const Footer = () => {
             justifyContent='center'
             alignItems='initial'
             color='white'
-            sx={P}
+            sx={Foot}
           >
             <ReactLogo/>
             <VStack alignItems='flex-start'>

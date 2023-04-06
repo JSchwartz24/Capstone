@@ -85,3 +85,8 @@
   font-size: 16pt;
   font-weight: medium;
 }
+
+/* change the color of calandar icon */
+::-webkit-calendar-picker-indicator {
+  filter: invert(1)
+}

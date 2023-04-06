@@ -9,7 +9,6 @@ const Hero = () => (
     <Box
       justifyContent="center"
       alignItems="center"
-      isDarkBackground
       backgroundColor="#edefee"
       paddingBottom='80px'
     >
