@@ -1,5 +1,5 @@
 import React, {useState, useReducer} from 'react'
-import {Box, Heading, VStack } from "@chakra-ui/react";
+import {Box, Heading, VStack, Text } from "@chakra-ui/react";
 import {FormLabel, Input, Select } from "@chakra-ui/react";
 
 import {Display, Sub, Lead} from './../styles/components';
