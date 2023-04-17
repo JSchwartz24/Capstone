@@ -38,23 +38,23 @@ const Nav = () => {
     const prevPosition = useRef(window.scrollY);
     const[transform, setTransform] = useState(null);
 
-    useEffect(() => {
-        const handleScroll = (e) => {
-          const currentPosition = window.pageYOffset;
+    // useEffect(() => {
+    //     const handleScroll = (e) => {
+    //       const currentPosition = window.pageYOffset;
 
-          if(prevPosition.current > currentPosition){
-            setTransform("translateY(0)");
-          }
-          else{
-            setTransform("translateY(-200px)");
-          }
-          prevPosition.current = currentPosition;
-        }
+    //       if(prevPosition.current > currentPosition){
+    //         setTransform("translateY(0)");
+    //       }
+    //       else{
+    //         setTransform("translateY(-200px)");
+    //       }
+    //       prevPosition.current = currentPosition;
+    //     }
 
-        window.addEventListener('scroll', handleScroll);
+    //     window.addEventListener('scroll', handleScroll);
 
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, [])
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    //   }, [])
 
       return (
         <Box

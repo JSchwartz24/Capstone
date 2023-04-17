@@ -26,5 +26,6 @@ describe("updateTimes", () => {
 
       // Assert
       expect(Array.isArray(result)).toBe(true);
+      expect(result).toEqual(availableTimes);
     });
   });

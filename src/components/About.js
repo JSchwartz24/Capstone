@@ -31,9 +31,9 @@ const Hero = () => (
           <Image
             borderRadius="xl"
             src={PhotoB}
-            position="absolute"
-            bottom={430}
-            left={800}
+            position="relative"
+            top={100}
+            right={350}
             width={200}
             height= {235}
             objectFit='cover'

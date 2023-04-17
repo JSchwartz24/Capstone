@@ -11,6 +11,7 @@ const Hero = () => (
       alignItems="center"
       backgroundColor="#edefee"
       paddingBottom='80px'
+      width="100%"
     >
         <HStack bg="green" spacing={6}>
           <VStack spacing={4} alignItems="left" backgroundColor="#495E57" paddingLeft= '15vw' paddingRight= '15vw' paddingTop='100px' paddingBottom='40px'>
@@ -24,7 +25,7 @@ const Hero = () => (
             src={Food}
             position="absolute"
             top={150}
-            left={750}
+            left="60vw"
             width={400}
             height= {475}
             objectFit='cover'

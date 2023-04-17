@@ -1,17 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
 import {Button, VStack } from "@chakra-ui/react";
-import {NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper,} from '@chakra-ui/react'
 import {FormLabel, Input, Select } from "@chakra-ui/react";
-
-import {submitAPI} from './Api'
 
 import {cardTitle, P} from './../styles/components';
 
 
-
 export default function Booking({form, setForm, availableTimes, dispatch, submitForm}) {
     const [selectedDate, setSelectedDate] = useState(null);
+
+    const numGuests= [1,2,3,4,5,6,7,8,9,10]
 
     function fixDate(nums){
         var date = new Date(nums); // M-D-YYYY
@@ -27,8 +24,6 @@ export default function Booking({form, setForm, availableTimes, dispatch, submit
     function handleDateChange(event) {
         var fixedDate = fixDate(event.target.value);
         var newSelectedDate = new Date (fixedDate);
-        console.log(newSelectedDate);
-        // const newSelectedDate = date;
         setSelectedDate(newSelectedDate);
         dispatch(newSelectedDate); // Dispatch state change when date is changed
         setForm({
@@ -54,37 +49,30 @@ export default function Booking({form, setForm, availableTimes, dispatch, submit
                     {availableTimes?.map(time => {
                         return <option key={time} value={time}> {time} </option>;
                     })}
-                    {/* {console.log(availableTimes)} */}
 
                 </Select>
                 <FormLabel htmlFor="guests">Number of Guests</FormLabel>
-                {/* <NumberInput defaultValue={2} min={1} max={10} id="guests">
-                    <NumberInputField
-                        value={form.guests}
+                <Select placeholder='Select Nuumber of Guests' id="guests"
                         onChange={e => {
-                            console.log(e.target.value)
                             setForm({
                                 ...form, guests: e.target.value
                             });
                         }}
-                    />
-                    <NumberInputStepper>
-                        <NumberIncrementStepper color='white'/>
-                        <NumberDecrementStepper color='white'/>
-                    </NumberInputStepper>
-                </NumberInput> */}
-                <Input type="number" placeholder={2} min="1" max="10" id="guests"
-                        // value={form.guests}
+                >
+                    {numGuests?.map(num => {
+                        return <option key={num} value={num}> {num} </option>;
+                    })}
+
+                </Select>
+                {/* <Input type="number" placeholder={2} min="1" max="10" id="guests"
                         onChange={e => {
-                            console.log(e.target.value)
                             setForm({
                                 ...form, guests: e.target.value
                             });
                         }}
-                />
+                /> */}
                 <FormLabel htmlFor="occasion">Occasion</FormLabel>
                 <Select placeholder='Select an Occasion' id="occasion"
-                        // value={form.occasion}
                         onChange={e => {
                             setForm({
                                 ...form, occasion: e.target.value

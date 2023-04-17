@@ -1,12 +1,13 @@
-import React, {useState, useReducer} from 'react'
+import React, {useState, useReducer, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Box } from "@chakra-ui/react";
+import { Box, Heading} from "@chakra-ui/react";
 
 import {fetchAPI, submitAPI} from './Api'
 
 import BookingForm from './BookingForm'
+import AltBookingForm from './AltBookingForm.js'
 
-import {cardTitle, P} from './../styles/components';
+import {Sub, cardTitle, P} from './../styles/components';
 
 export function initializeTimes() {
     const date = new Date();
@@ -21,8 +22,6 @@ export function updateTimes(availableTimes, newSelectedDate) {
     // Return the updated state
     return updatedTimes;
 }
-
-
 
 // function updateTimes(state, selectedDate) {
 //     // Get the day of the week for the selected date
@@ -66,34 +65,36 @@ export default function Booking() {
     const [form, setForm] = useState({
         date: '',
         time: '',
-        guests: '2',
+        guests: '',
         occasion: '',
     });
+
+    useEffect(() => {
+        localStorage.setItem('form', JSON.stringify(form));
+    }, [form]);
 
     const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes);
 
     const navigate = useNavigate();
 
     function submitForm(e){
-        e.preventDefault();
+        // e.preventDefault();
         console.log(form);
         const isTrue = submitAPI(form);
-        console.log(isTrue);
         if (isTrue){
             navigate('/confirmed')
         }
     }
 
-
-
     return(
         <Box
         justifyContent="center"
         alignItems="center"
-        backgroundColor="#edefee"
+        backgroundColor="green"
         color='white'
+        paddingTop={10}
         >
-            <BookingForm form={form} setForm={setForm} availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
+            <AltBookingForm form={form} setForm={setForm} availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
         </Box>
     )
 };
